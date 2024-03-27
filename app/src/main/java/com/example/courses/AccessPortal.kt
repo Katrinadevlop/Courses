@@ -16,10 +16,10 @@ class AccessPortal : AppCompatActivity() {
             startActivity(activityWindows)
         }
 
-//        val loginButtton:Button = findViewById(R.id.loginButton)
-//        loginButtton.setOnClickListener{
-//            val activityWindow = Intent(this, Login::class.java)
-//            startActivity(activityWindow)
-//        }
+        val loginButtton:Button = findViewById(R.id.loginButton)
+        loginButtton.setOnClickListener{
+            val activityWindow = Intent(this, loginWindow::class.java)
+            startActivity(activityWindow)
+        }
     }
 }

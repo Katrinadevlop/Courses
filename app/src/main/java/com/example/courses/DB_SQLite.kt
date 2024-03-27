@@ -26,15 +26,40 @@ class DB_SQLite(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
 
     fun addUser(email: String, password: String): Boolean {
         val db = this.writableDatabase
-        val values = ContentValues().apply {
+        val valuesEmail = ContentValues()
+        valuesEmail.put(COLUMN_EMAIL, email)
+        val emailRowId = db.insert(TABLE_NAME, null, valuesEmail)
+
+        val valuesPassword = ContentValues()
+        valuesPassword.put(COLUMN_PASSWORD, password)
+        val passwordRowId = db.insert(TABLE_NAME, null, valuesPassword)
+
+        db.close()
+        return emailRowId != -1L && passwordRowId != -1L
+    }
+
+    /*fun addUser(email: String, password: String): Boolean {
+        val db = this.writableDatabase
+        val values = ContentValues()
+
+        values.put(COLUMN_EMAIL, email)
+        val emailRowId = db.insert(TABLE_NAME, null, values)
+
+        values.clear()
+
+        values.put(COLUMN_PASSWORD, password)
+        val passwordRowId = db.insert(TABLE_NAME, null, values)
+
+        *//*val values = ContentValues().apply {
             put(COLUMN_EMAIL, email)
             put(COLUMN_PASSWORD, password)
         }
-        db.insert(TABLE_NAME, null, values)
+        val newRowId = db.insert(TABLE_NAME, null, values)*//*
         db.close()
-        return true
-    }
- /*   CREATE TABLE Users (
+        return emailRowId != -1L && passwordRowId != -1L
+    }*/
+
+    /*   CREATE TABLE Users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     email TEXT NOT NULL,
     password TEXT NOT NULL
@@ -54,5 +79,13 @@ class DB_SQLite(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
             }
         }
         return users
+    }
+
+    fun checkUser(email: String, password: String): Boolean {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_EMAIL = ? AND $COLUMN_PASSWORD = ?", arrayOf(email, password))
+        val count = cursor.count
+        cursor.close()
+        return count > 0
     }
 }

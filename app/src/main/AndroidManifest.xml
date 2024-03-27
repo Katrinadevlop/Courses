@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Courses"
         tools:targetApi="31">
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/login_window" />
+        <activity
+            android:name=".log"
+            android:exported="false" />
+        <activity
+            android:name=".loginWindow"
+            android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

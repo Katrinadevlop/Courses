@@ -2,20 +2,26 @@ package com.example.courses
 
 import android.content.ContentValues
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import org.w3c.dom.Text
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-class RegistrationWindow : AppCompatActivity() {
+class loginWindow : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registration_window)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_login_window)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         val exitInWindowsRegistration: Button = findViewById(R.id.exitButton)
         exitInWindowsRegistration.setOnClickListener{
@@ -31,13 +37,16 @@ class RegistrationWindow : AppCompatActivity() {
             val textPassword = editTextTextPassword.text.toString()
 
             val dbSqlite = DB_SQLite(this)
-            val add = dbSqlite.addUser(textEmailAddress, textPassword)
-            if (add) {
-                Toast.makeText(this, "Данные успешно сохранены", Toast.LENGTH_SHORT).show()
+
+            val userVerification = dbSqlite.checkUser(textEmailAddress, textPassword)
+            if (userVerification) {
+                Toast.makeText(this, "Вход выполнен", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Ошибка сохранения данных", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Данные не совпадают", Toast.LENGTH_SHORT).show()
                 Log.e("DB_SQLite", "Ошибка сохранения данных")
             }
+            val activityWindow = Intent(this, AccessPortal::class.java)
+            startActivity(activityWindow)
         }
     }
 }

@@ -7,6 +7,7 @@
     tools:context=".RegistrationWindow">
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/registrationButton"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
@@ -20,6 +21,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
+=======
+        android:id="@+id/exitButton"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:background="@xml/arrow_back_background"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="-"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:icon="?attr/actionModeCloseDrawable"
+        app:iconTint="#0B0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054" />
+>>>>>>> 419a4e7c5160931d6c21c38a0d5455277192a1d4
 
     <TextView
         android:id="@+id/textView"
@@ -52,6 +71,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.362" />
 
     <Button
@@ -71,6 +91,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.054" />
+=======
+        app:layout_constraintVertical_bias="0.363" />
+
+    <Button
+        android:id="@+id/registrationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="ЗАРЕГИТРИРОВАТЬСЯ"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+>>>>>>> 419a4e7c5160931d6c21c38a0d5455277192a1d4
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"

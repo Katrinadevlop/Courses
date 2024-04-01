@@ -1,5 +1,6 @@
 package com.example.courses
 
+<<<<<<< HEAD
 import android.content.ContentValues
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
@@ -11,6 +12,12 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import org.w3c.dom.Text
+=======
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+>>>>>>> 419a4e7c5160931d6c21c38a0d5455277192a1d4
 
 class RegistrationWindow : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +32,7 @@ class RegistrationWindow : AppCompatActivity() {
 
         val registrationButton: Button = findViewById(R.id.registrationButton)
         registrationButton.setOnClickListener{
+<<<<<<< HEAD
             val editTextTextEmailAddress: EditText = findViewById(R.id.editTextTextEmailAddress)
             val editTextTextPassword: EditText = findViewById(R.id.editTextTextPassword)
             val textEmailAddress = editTextTextEmailAddress.text.toString()
@@ -38,6 +46,10 @@ class RegistrationWindow : AppCompatActivity() {
                 Toast.makeText(this, "Ошибка сохранения данных", Toast.LENGTH_SHORT).show()
                 Log.e("DB_SQLite", "Ошибка сохранения данных")
             }
+=======
+            val activityToSave = Intent(this, AccessPortal::class.java)
+            startActivity(activityToSave)
+>>>>>>> 419a4e7c5160931d6c21c38a0d5455277192a1d4
         }
     }
 }

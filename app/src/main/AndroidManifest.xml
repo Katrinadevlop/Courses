@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Courses"
         tools:targetApi="31">
+<<<<<<< HEAD
         <activity
             android:name=".log"
             android:exported="false" />
@@ -19,6 +20,11 @@
             android:name=".loginWindow"
             android:exported="false" />
 
+=======
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/arrow_back_background" />
+>>>>>>> 419a4e7c5160931d6c21c38a0d5455277192a1d4
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

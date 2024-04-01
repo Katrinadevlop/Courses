@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import org.w3c.dom.Text
 
 class RegistrationWindow : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +30,16 @@ class RegistrationWindow : AppCompatActivity() {
             val textPassword = editTextTextPassword.text.toString()
 
             val dbSqlite = DB_SQLite(this)
+            val dataBase = dbSqlite.writableDatabase
+            val contentValues = ContentValues()
+            contentValues.put("email", textEmailAddress)
+            contentValues.put("password", textPassword)
+
+          /*  val user = dbSqlite.getAllUsers()
+            val textViews = findViewById<TextView>(R.id.textView3)
+            val usersText = user.joinToString("\n") { "Email: ${it.first}, Password: ${it.second}" }
+            textViews.text = usersText*/
+
             val add = dbSqlite.addUser(textEmailAddress, textPassword)
             if (add) {
                 Toast.makeText(this, "Данные успешно сохранены", Toast.LENGTH_SHORT).show()
@@ -38,6 +47,9 @@ class RegistrationWindow : AppCompatActivity() {
                 Toast.makeText(this, "Ошибка сохранения данных", Toast.LENGTH_SHORT).show()
                 Log.e("DB_SQLite", "Ошибка сохранения данных")
             }
+
+            /*val activityToSave = Intent(this, AccessPortal::class.java)
+            startActivity(activityToSave)*/
         }
     }
 }

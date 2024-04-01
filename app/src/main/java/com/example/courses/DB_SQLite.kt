@@ -19,6 +19,7 @@ class DB_SQLite(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_TABLE = ("CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_EMAIL TEXT, $COLUMN_PASSWORD TEXT)")
         db.execSQL(CREATE_TABLE)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {

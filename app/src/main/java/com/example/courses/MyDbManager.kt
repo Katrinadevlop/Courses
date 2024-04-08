@@ -22,7 +22,16 @@ class MyDbManager(context: Context){
 
     fun readDbData() : ArrayList<String> {
         val dataList = arrayListOf<String>()
-        var cursor = db
+        var cursor = db?.query(MyDbNameClass.TABLE_NAME, null, null, null, null, null, null)
+        while(cursor?.moveToNext()!!){
+            val dataText = cursor?.getString(cursor.getColumnIndexOrThrow(MyDbNameClass.TABLE_NAME))//
+            dataList.add(dataText.toString())
+        }
+        cursor.close()
         return dataList
+    }
+
+    fun closeDB(){
+        myDbHelper.close()
     }
 }

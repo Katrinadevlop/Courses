@@ -10,16 +10,16 @@ class AccessPortal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_access_portal)
 
-        val registrationButton:Button = findViewById(R.id.registrationButton)
+        val registrationButton:Button = findViewById(R.id.authorizationButton)
         registrationButton.setOnClickListener {
             val activityWindows = Intent(this, RegistrationWindow::class.java)
             startActivity(activityWindows)
         }
 
-//        val loginButtton:Button = findViewById(R.id.loginButton)
-//        loginButtton.setOnClickListener{
-//            val activityWindow = Intent(this, Login::class.java)
-//            startActivity(activityWindow)
-//        }
+        val loginButtons:Button = findViewById(R.id.loginButton)
+        loginButtons.setOnClickListener{
+            val activityWindow = Intent(this, loginWindow::class.java)
+            startActivity(activityWindow)
+        }
     }
 }

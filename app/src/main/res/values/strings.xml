@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Courses</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Главная</string>
+    <string name="title_dashboard">Чаты</string>
+    <string name="title_notifications">Аккаунт</string>
     <string name="login_button">Вход</string>
     <string name="registration_button">Регистрация</string>
     <string name="screen">Экран</string>

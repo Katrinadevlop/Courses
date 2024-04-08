@@ -13,9 +13,6 @@
         android:theme="@style/Theme.Courses"
         tools:targetApi="31">
         <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/login_window" />
-        <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 

@@ -59,12 +59,13 @@
         app:layout_constraintVertical_bias="0.363" />
 
     <Button
-        android:id="@+id/registrationButton"
+        android:id="@+id/authorizationButton"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:background="@drawable/round_button"
         android:fontFamily="@font/comfortaa_light"
         android:text="Войти"
+        android:onClick="onClick"
         android:textAllCaps="false"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

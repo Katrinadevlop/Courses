@@ -1,12 +1,9 @@
 package com.example.courses
 
-import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,9 +26,9 @@ class loginWindow : AppCompatActivity() {
             startActivity(activity)
         }
 
-        val registrationButton: Button = findViewById(R.id.registrationButton)
-        registrationButton.setOnClickListener{
-            val editTextTextEmailAddress: EditText = findViewById(R.id.editTextTextEmailAddress)
+        //val authorizationButton: Button = findViewById(R.id.authorizationButton)
+        //authorizationButton.setOnClickListener{
+            /*val editTextTextEmailAddress: EditText = findViewById(R.id.editTextTextEmailAddress)
             val editTextTextPassword: EditText = findViewById(R.id.editTextTextPassword)
             val textEmailAddress = editTextTextEmailAddress.text.toString()
             val textPassword = editTextTextPassword.text.toString()
@@ -44,9 +41,12 @@ class loginWindow : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Данные не совпадают", Toast.LENGTH_SHORT).show()
                 Log.e("DB_SQLite", "Ошибка сохранения данных")
-            }
-            val activityWindow = Intent(this, AccessPortal::class.java)
-            startActivity(activityWindow)
-        }
+            }*/
+        //}
+    }
+
+    fun onClick(view: View) {
+        val activityWindow = Intent(this, MainActivity::class.java)
+        startActivity(activityWindow)
     }
 }
